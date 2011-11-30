@@ -2,8 +2,11 @@
 //@script RequireComponent(CharacterController)
 
 var moveJoystick : Joystick;
-var speed : int = 1;
+var speed : int = 4;
 var rotationSpeed : int = 90;
+
+var isJoystickUsing : boolean = false;
+
 
 private var myTransform : Transform;
 private var myAnimation : Animation;
@@ -26,10 +29,12 @@ function Update () {
 		myTransform.Translate(0, 0, translate * Time.deltaTime * speed);
 		myTransform.Rotate(0, rotation * rotationSpeed * Time.deltaTime, 0);	
 		myAnimation.CrossFade("walk-edit");
+		isJoystickUsing = true;
 
 	}
 	else {
 		myAnimation.CrossFade("idle-edit");
+		isJoystickUsing = false;
 	}
 	
 	
