@@ -1,14 +1,16 @@
-var customSkin:GUISkin;
+//var customSkin:GUISkin;
 function OnGUI() {
 	var halfScreenW:float = Screen.width/2;
-	var halfScreenH:float = Screen.height/2;
+	//var halfScreenH:float = Screen.height/2;
 
 	GUI.backgroundColor = Color.green;
 	GUI.color = Color.yellow;
 
-	if(GUI.Button(Rect(0,0,100,50),"Main")){
+	if(GUI.Button(Rect(0,0,100,50),GUIContent("Main","Back to Main Scene"))){
 		Application.LoadLevel("Main");
 	}
+	GUI.color = Color.white;
+	GUI.Label(Rect(10,50,150,50),GUI.tooltip);
 	
 	GUI.color = Color.red;
 	

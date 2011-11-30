@@ -1,10 +1,11 @@
-var customSkin:GUISkin;
+//var customSkin:GUISkin;
 function OnGUI () {
 	GUI.backgroundColor = Color.green;
 	GUI.color = Color.yellow;
 	
 	if(GUI.Button(Rect(0,0,100,50),"Pet Shop")){
-		
+		GUI.backgroundColor = Color.red;
+		Application.LoadLevel("PetShop");
 	}
 	
 	if(GUI.Button(Rect(0,50,100,50),"FaceBook")){
