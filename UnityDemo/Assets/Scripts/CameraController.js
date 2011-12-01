@@ -53,7 +53,7 @@ function LateUpdate()
 			if (fingerCount==1)
 			{
 				var touch: Touch = Input.touches[0];
-				cameraTransform.Translate(Vector3(-touch.deltaPosition.y,0,touch.deltaPosition.x)*touch.deltaTime*0.2,Space.World);
+				cameraTransform.Translate(Vector3(touch.deltaPosition.y,0,-touch.deltaPosition.x)*touch.deltaTime,Space.World);
 				cameraFreeViewP=cameraTransform.localPosition;
 			}
 			if (fingerCount==2)
@@ -82,7 +82,7 @@ function LateUpdate()
 				lastTouchSecond = currentTouchSecond;
 				lastDistance = currentDistance;
 				
-				cameraTransform.Translate(Vector3.forward*distanceOffset*Time.deltaTime*5,Space.Self);
+				cameraTransform.Translate(Vector3.forward*distanceOffset*Time.deltaTime,Space.Self);
 				cameraFreeViewP=cameraTransform.localPosition;
 			}
 			break;
@@ -129,7 +129,7 @@ function LateUpdate()
 				lastTouchSecond = currentTouchSecondT;
 				lastDistance = currentDistanceT;
 				
-				cameraTransform.Translate(Vector3.forward*distanceOffsetT*Time.deltaTime*5,Space.Self);
+				cameraTransform.Translate(Vector3.forward*distanceOffsetT*Time.deltaTime,Space.Self);
 				cameraFreeViewP=cameraTransform.localPosition;
 			}
 			break;
