@@ -1,14 +1,14 @@
-﻿<Properties>
+<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraController.js">
     <Files>
+      <File FileName="Assets/Scripts/CameraController.js" Line="56" Column="64" />
       <File FileName="Assets/Scripts/Button_PetShop.js" Line="43" Column="99" />
       <File FileName="Assets/Scripts/Button_Main.js" Line="1" Column="3" />
       <File FileName="Assets/Scripts/Button_Author.js" Line="1" Column="3" />
       <File FileName="Assets/Scripts/Button_Lion.js" Line="29" Column="24" />
-      <File FileName="Assets/Scripts/CameraController.js" Line="27" Column="11" />
-      <File FileName="Assets/Scripts/CameraButton.js" Line="18" Column="53" />
-      <File FileName="Assets/Scripts/CharacterMovementControl.js" Line="5" Column="20" />
+      <File FileName="Assets/Scripts/CharacterMovementControl.js" Line="32" Column="26" />
+      <File FileName="Assets/Scripts/RotationControl.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
