@@ -2,8 +2,8 @@
 var scrollPosition : Vector2 = Vector2.zero;
 var style : GUIStyle;
 
-var lion : Texture;
 var leopard: Texture;
+var lion : Texture;
 var tiger:Texture;
 var camel:Texture;
 var dragon:Texture;
@@ -42,16 +42,16 @@ function OnGUI() {
 	// rect and put it in a small rect on the screen.
 	scrollPosition = GUI.BeginScrollView (Rect (280,150,300,300),scrollPosition, Rect (0, 0, 300, 1050),true,true);
 	
-	//Lion
-	GUI.DrawTexture(Rect(0,0,70,70),lion,ScaleMode.StretchToFill,true,10.0f);
-	if(GUI.Button(Rect(70,0,200,70),"Lion")){
+	//Leopard
+	GUI.DrawTexture(Rect(0,0,70,70),leopard,ScaleMode.StretchToFill,true,10.0f);
+	if(GUI.Button(Rect(70,0,200,70),"Leopard")){
 		Application.LoadLevel("Lion");
 	}
 	GUI.Label(Rect(270,35,100,70),"100$");
 	
-	//Leopard
-	GUI.DrawTexture(Rect(0,70,70,70),leopard,ScaleMode.StretchToFill,true,10.0f);
-	GUI.Button(Rect(70,70,200,70),"Leopard");
+	//Lion
+	GUI.DrawTexture(Rect(0,70,70,70),lion,ScaleMode.StretchToFill,true,10.0f);
+	GUI.Button(Rect(70,70,200,70),"Lion");
 	GUI.Label(Rect(270,105,100,70),"90$");
 	
 	//Tiger

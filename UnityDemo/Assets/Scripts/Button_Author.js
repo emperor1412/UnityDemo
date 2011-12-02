@@ -31,4 +31,8 @@ function OnGUI() {
 	GUI.color = Color.white;
 	
 	GUI.Label(Rect(halfScreenW,300,250,50),"Nguyen Le Quoc Dung ( Team Member )");
+	
+	GUI.color = Color.white;
+	
+	GUI.Label(Rect(halfScreenW,350,250,50),"Le Tan Dinh ( Team Member )");
 }
