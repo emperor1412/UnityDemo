@@ -1,8 +1,8 @@
 #pragma strict
-//@script RequireComponent(CharacterController)
+@script RequireComponent(CharacterController)
 
 var moveJoystick : Joystick;
-var speed : int = 4;
+var speed : int = 1;
 var rotationSpeed : int = 90;
 
 var isJoystickUsing : boolean = false;

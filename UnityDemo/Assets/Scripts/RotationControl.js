@@ -51,10 +51,10 @@ function FixedUpdate()
 			//var GUIRay = GUICamera.ScreenPointToRay(theTouch.position);
 			
 				
-         	if(Physics.Raycast(ray,hit,50,layerMask))
-         	{	
+         	//if(Physics.Raycast(ray,hit,50,layerMask))
+         	//{	
 
-                                               if(Input.touchCount == 1)
+                        if(Input.touchCount == 1)
 						{
 							
 							if (theTouch.phase == TouchPhase.Began) 
@@ -65,7 +65,7 @@ function FixedUpdate()
          					if (theTouch.phase == TouchPhase.Moved) 
          					{
           		        		
-         						targetItem.transform.Rotate(theTouch.deltaPosition.y * rotationRate, -theTouch.deltaPosition.x * rotationRate,0,Space.World);
+         						targetItem.transform.Rotate(0 /*theTouch.deltaPosition.y * rotationRate*/, -theTouch.deltaPosition.x * rotationRate,0,Space.World);
          						wasRotating = true;
          					}		
          	
@@ -83,9 +83,9 @@ function FixedUpdate()
            							}	
          						itemTimeTouchPhaseEnded = Time.time;
          						}
-                                                   }
+                             }
 						}
-			}
+			//}
 
 
 			

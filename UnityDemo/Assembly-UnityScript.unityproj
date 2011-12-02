@@ -51,6 +51,9 @@
      <Compile Include="Assets\Scripts\CameraButton.js" />
      <Compile Include="Assets\Scripts\CameraController.js" />
      <Compile Include="Assets\Scripts\CharacterMovementControl.js" />
+     <Compile Include="Assets\Scripts\Move1.js" />
+     <Compile Include="Assets\Scripts\PenelopeMoveController.js" />
+     <Compile Include="Assets\Scripts\PenelopeMoveScript.js" />
      <Compile Include="Assets\Scripts\RotationControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />
