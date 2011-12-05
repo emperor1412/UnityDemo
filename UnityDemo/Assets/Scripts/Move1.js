@@ -1,6 +1,6 @@
 #pragma strict
 
-var speed = 1;
+var speed = 5;
 var rotation = 100;
 
 private var characterController : CharacterController;

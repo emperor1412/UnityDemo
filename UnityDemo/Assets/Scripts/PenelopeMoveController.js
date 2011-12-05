@@ -2,7 +2,7 @@
 @script RequireComponent(CharacterController)
 
 var moveJoystick : Joystick;
-var speed : int = 1;
+var speed : int = 5;
 var rotationSpeed : int = 90;
 var cameraTransform : Transform;
 var isJoystickUsing : boolean = false;
@@ -33,9 +33,11 @@ function Update () {
         print("camera type : " + cameraController.type);
         
         if(cameraController.type == CameraType.FirstPerson){
-	        this.transform.Rotate(0, x, 0, Space.World);
+	        myTransform.Rotate(0, x, 0 , Space.World );
 	        var movement : Vector3 = transform.TransformDirection(Vector3.forward);	                
-	        characterController.SimpleMove(movement * speed * y);
+			movement.Normalize();	                
+	        movement.y = 0;	
+	        characterController.Move(movement * speed * y * Time.deltaTime);
         }
 		else {
 			movement = Vector3(x, 0, y);	        

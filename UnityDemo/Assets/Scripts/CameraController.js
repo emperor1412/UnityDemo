@@ -12,10 +12,10 @@ public var targetTransform:Transform;
 var characterMovementControl : PenelopeMoveController;
 var joystick : Joystick;
 
-var bottomCutY:float = 1.5;
-var topCutY:float = 8;
-var cameraBounceXMinX =-14;
-var cameraBounceXMaxX = 14;
+var bottomCutY:float = 4;
+var topCutY:float = 10;
+var cameraBounceXMinX =-10;
+var cameraBounceXMaxX = 20;
 var cameraBounceXMinZ =-14;
 var cameraBounceXMaxZ = 14;
 private var transformFreeViewP:Vector3;
@@ -26,11 +26,19 @@ private var lastDistance:Vector2;
 private var beginP:Vector2;
 function Start ()
 {
-	type =type.FirstPerson;
-	cameraOffset.localPosition= Vector3(0,0.6,0.2);
+//	type =type.FirstPerson;
+//	cameraOffset.localPosition= Vector3(0,2.4,0.2);
+//	cameraOffset.localEulerAngles= Vector3(0,0,0);
+//	cameraTransform.localPosition = Vector3(0,0,0);
+//	cameraFreeViewR = Vector3 (0,0,0);
+	
+	type = type.ThirdPerson;
+	transformR = Vector3 (0,0,0);
+	cameraOffset.localPosition= Vector3(5,5,0);
 	cameraOffset.localEulerAngles= Vector3(0,0,0);
-	cameraTransform.localPosition = Vector3(0,0,0);
-	cameraFreeViewR = Vector3 (0,0,0);
+	cameraFreeViewP = Vector3(0,0,0);
+	cameraFreeViewR = Vector3 (45,-90,0);
+	
 	print ("Begin");
 }
 
