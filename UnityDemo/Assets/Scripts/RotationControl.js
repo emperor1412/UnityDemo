@@ -123,7 +123,7 @@ function FixedUpdate()
          			rotateVelocityY = 0.0f;
          			
          		}	
-         		targetItem.transform.Rotate(YVelocity*Time.deltaTime * rotationRate, -XVelocity * Time.deltaTime * rotationRate,0,Space.World);		
+         		targetItem.transform.Rotate(0 /*YVelocity*Time.deltaTime * rotationRate*/, -XVelocity * Time.deltaTime * rotationRate,0,Space.World);		
          				
          	}	
         

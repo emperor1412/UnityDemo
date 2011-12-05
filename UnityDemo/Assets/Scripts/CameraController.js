@@ -3,15 +3,14 @@ var type : CameraType;
 public var cameraTransform: Transform;
 public var cameraOffset: Transform;
 public var transformR:Vector3;
-var targetTransform:Transform;
+public var cameraFreeViewP:Vector3;
+public var cameraFreeViewR:Vector3;
+
+public var targetTransform:Transform;
 
 //var characterMovementControl : CharacterMovementControl;
 var characterMovementControl : PenelopeMoveController;
-
 var joystick : Joystick;
-
-public var cameraFreeViewP:Vector3;
-public var cameraFreeViewR:Vector3;
 
 var bottomCutY:float = 1.5;
 var topCutY:float = 8;
@@ -24,15 +23,22 @@ private var transformFreeViewP:Vector3;
 private var lastTouchFirst:Vector2;
 private var lastTouchSecond:Vector2;
 private var lastDistance:Vector2;
+private var beginP:Vector2;
 function Start ()
 {
 	type =type.FirstPerson;
 	cameraOffset.localPosition= Vector3(0,0.6,0.2);
 	cameraOffset.localEulerAngles= Vector3(0,0,0);
 	cameraTransform.localPosition = Vector3(0,0,0);
-	cameraTransform.localEulerAngles = Vector3(0,0,0);
+	cameraFreeViewR = Vector3 (0,0,0);
 	print ("Begin");
 }
+
+function changeAngle(angle:float): float
+{
+	return angle;
+}
+
 function LateUpdate()
 {
 	var touch: Touch;
@@ -70,6 +76,7 @@ function LateUpdate()
 			transform.position = targetTransform.position;
 			transform.rotation = targetTransform.rotation;
 			transformFreeViewP=transform.localPosition;
+			cameraTransform.localEulerAngles = cameraFreeViewR;
 			break;
 
 		case type.FreeView:
@@ -77,7 +84,8 @@ function LateUpdate()
 			transform.localPosition = transformFreeViewP;
 			transform.localEulerAngles = Vector3(0,0,0);
 			cameraTransform.localPosition = cameraFreeViewP;
-				
+			cameraTransform.localEulerAngles = cameraFreeViewR;
+			
 			if (characterMovementControl.isJoystickUsing)
 			return;
 			
@@ -93,7 +101,7 @@ function LateUpdate()
 				if(touch.position.x > deadZone.xMin && touch.position.x < deadZone.xMax && touch.position.y > deadZone.yMin && touch.position.y<deadZone.yMax)
 				return;
 			
-				cameraTransform.Translate(Vector3(touch.deltaPosition.y,0,-touch.deltaPosition.x)*touch.deltaTime*0.1,Space.World);
+				cameraTransform.Translate(Vector3(touch.deltaPosition.y,0,-touch.deltaPosition.x)*touch.deltaTime*0.5,Space.World);
 				if (cameraTransform.position.x<cameraBounceXMinX)
 					cameraTransform.position.x=cameraBounceXMinX;
 				if (cameraTransform.position.x>cameraBounceXMaxX)
@@ -162,6 +170,7 @@ function LateUpdate()
 			
 			transform.position = targetTransform.position;
 			cameraTransform.localPosition = cameraFreeViewP;
+			cameraTransform.localEulerAngles = cameraFreeViewR;
 			transformFreeViewP=transform.localPosition;
 			transform.localEulerAngles=transformR;
 			
@@ -178,7 +187,6 @@ function LateUpdate()
 				touch = Input.touches[0];
 				if(touch.position.x>deadZone.xMin && touch.position.x<deadZone.xMax && touch.position.y > deadZone.yMin && touch.position.y<deadZone.yMax)
 				return;
-				var beginP:Vector2;
 				var moveP:Vector2;
 				if (touch.phase == TouchPhase.Began){
 					beginP=touch.position;
@@ -186,9 +194,12 @@ function LateUpdate()
 				} else{
 					moveP =touch.position;
 					var Poffset: Vector2 = moveP - beginP;
-				
-					transform.Rotate(Vector3(0,Poffset.y*Time.deltaTime,0),Space.Self);
-				
+					beginP=moveP;
+					if (Poffset.x<0)
+						{transform.Rotate(-Vector3.up*Poffset.magnitude*Time.deltaTime*5,Space.Self);}
+					else
+						{transform.Rotate(Vector3.up*Poffset.magnitude*Time.deltaTime*5,Space.Self);}
+						
 					transformR=transform.localEulerAngles;
 				}
 			}

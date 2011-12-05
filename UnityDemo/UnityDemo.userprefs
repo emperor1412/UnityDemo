@@ -1,13 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RotationControl.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets (Mobile)/Scripts/Joystick.js">
     <Files>
-      <File FileName="Assets/Scripts/PenelopeMoveScript.js" Line="34" Column="34" />
-      <File FileName="Assets/Scripts/Move1.js" Line="12" Column="2" />
-      <File FileName="Assets/Scripts/PenelopeMoveController.js" Line="37" Column="11" />
-      <File FileName="Assets/Scripts/CharacterMovementControl.js" Line="2" Column="1" />
-      <File FileName="Assets/Scripts/CameraController.js" Line="8" Column="3" />
-      <File FileName="Assets/Scripts/RotationControl.js" Line="126" Column="1" />
+      <File FileName="Assets/Standard Assets (Mobile)/Scripts/Joystick.js" Line="105" Column="1" />
+      <File FileName="Assets/Scripts/PenelopeMoveController.js" Line="25" Column="4" />
+      <File FileName="Assets/Scripts/RotationControl.js" Line="84" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

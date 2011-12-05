@@ -243,4 +243,7 @@ function Update()
 		// Rescale the output after taking the dead zone into account
 		position.y = Mathf.Sign( position.y ) * ( absoluteY - deadZone.y ) / ( 1 - deadZone.y );
 	}
+	
+	
+	//print("position : " + position);
 }

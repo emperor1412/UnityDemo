@@ -77,10 +77,10 @@ function Update()
 	// Check for jump
 	if ( character.isGrounded )
 	{
-		if ( !rotateJoystick.IsFingerDown() )
+		if (false && !rotateJoystick.IsFingerDown() )
 			canJump = true;
 		
-		if ( canJump && rotateJoystick.tapCount == 2 )
+		if (false && canJump && rotateJoystick.tapCount == 2 )
 		{
 			// Apply the current movement to launch velocity
 			velocity = character.velocity;
